@@ -17,6 +17,7 @@ Run:
 
 Run with Gin Index:
 
+
 ```sql
 CREATE INDEX queue_ids_idx ON queue USING GIN (q_name, (data #> '{ids}'::text[]));
 ```
@@ -27,5 +28,6 @@ CREATE INDEX queue_ids_idx ON queue USING GIN (q_name, (data #> '{ids}'::text[])
 | 25W/25R     | 1,250,000 | 235.29247119812302 | 235.37000080683464 |
 | 25W/25R     | 2,500,000 | 195.0683681243154  | 195.09491303797395 |
 
+![Chart](GIN_Cost.png)
 
 
